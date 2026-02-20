@@ -1,0 +1,24 @@
+# Example MLS-specific override
+# Copy and customise for each MLS you integrate with.
+
+jurisdiction: "CA"
+
+required_fields:
+  - list_price
+  - address
+  - bedrooms
+  - bathrooms
+  - living_area_sqft
+  - lot_size_sqft
+  - mls_number
+  - agent_id
+  - tax_assessed_value
+
+photo_thresholds:
+  optimal_count: 27
+  minimum_count: 1
+  require_front_exterior: true
+
+# CA AB-723: AI-altered images must be labelled
+ai_label_jurisdictions:
+  - CA

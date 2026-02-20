@@ -1,0 +1,53 @@
+# PLM Default Configuration
+# -------------------------
+# Override per-MLS or per-brokerage by placing a sibling YAML file
+# (e.g. mls_crmls.yaml) and passing its name to load_config().
+
+jurisdiction: "default"
+
+scoring_weights:
+  compliance: 0.20
+  photos: 0.15
+  description: 0.10
+  amenities: 0.10
+  price: 0.15
+  engagement: 0.15
+  market_context: 0.05
+  timeliness: 0.05
+  fair_housing: 0.05
+
+photo_thresholds:
+  optimal_count: 25
+  minimum_count: 1
+  require_front_exterior: true
+  min_quality_score: 0.4
+
+description_thresholds:
+  optimal_word_count: 150
+  min_word_count: 30
+
+price_thresholds:
+  overpriced_penalty_start_pct: 0.05
+  overpriced_max_penalty_pct: 0.50
+
+dom_thresholds:
+  penalty_start_days: 30
+  max_penalty_days: 120
+
+alert_thresholds:
+  low_views_days: 7
+  no_leads_days: 14
+  high_dom_multiplier: 1.5
+  score_poor_threshold: 50.0
+
+required_fields:
+  - list_price
+  - address
+  - bedrooms
+  - bathrooms
+  - living_area_sqft
+  - mls_number
+  - agent_id
+
+# Extra rules (per-MLS customisable)
+max_coming_soon_days: 21
